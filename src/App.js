@@ -1,9 +1,18 @@
 import { React, useEffect } from "react";
+import MovieCard from "./MovieCard";
 
-//api key
-//e3a7437e
+import './App.css';
+import SearchIcon from './search.svg';
 
 const API_URL = 'http://www.omdbapi.com?apikey=e3a7437e';
+
+const movie1 = {
+    "Title": "Amazing Spiderman Syndrome",
+    "Year": "2012",
+    "imdbID": "tt2586634",
+    "Type": "movie",
+    "Poster": "N/A"
+}
 
 const App = () => {
 
@@ -19,7 +28,25 @@ const App = () => {
     }, []);
 
     return (
-        <h1>App</h1>
+        <div className="app">
+            <h1>MovieLand</h1>
+
+            <div className="search">
+                <input
+                    placeholder="Search for movies"
+                    value="Superman"
+                    onChange={() => { }}
+                />
+                <img
+                    src={SearchIcon}
+                    alt="search"
+                    onClick={() => { }}
+                />
+            </div>
+            <div className="container">
+                <MovieCard movie1={movie1}/>
+            </div>
+        </div>
     );
 }
 
